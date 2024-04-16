@@ -127,7 +127,7 @@ function sumar(primerDatoSumar, segundoDatoSumar) {
 
 
 
-
+// NOTA : No emplee console.log el cual enseña el resultado en la consola ya que personalmente le quitaba realismo al trabajo, normalmente las personas no lo ven
 
 
 
