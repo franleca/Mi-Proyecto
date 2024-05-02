@@ -127,7 +127,106 @@ function sumar(primerDatoSumar, segundoDatoSumar) {
 
 
 
-// NOTA : No emplee console.log el cual enseña el resultado en la consola ya que personalmente le quitaba realismo al trabajo, normalmente las personas no lo ven
+
+// CLASES Y OBJETOS
+
+
+// En este caso voy a usar clases y objetos para poder calcular el gasto mensual de la heladeria en proveedores
+
+class Proveedor {
+
+    constructor(nombre, mercancia, precioSemanal, dni, empresa) {
+
+      this.nombre = nombre;
+      this.mercancia = mercancia;
+      this.precioSemanal = precioSemanal;
+      this.dni = dni;
+      this.empresa = empresa;
+    }
+  
+    actualizarMercancia(nuevaMercancia) {
+
+        this.mercancia = nuevaMercancia;
+        console.log(`La mercancia ${this.mercancia} se cambio por ${nuevaMercancia}`);
+    }
+
+    actualizarPrecioSemanal(nuevoPrecio) {
+
+        this.precioSemanal = nuevoPrecio;
+        console.log(`El precio de ${this.nombre} se elevo a ${nuevoPrecio}`);
+    }
+
+    calcularPrecioMensual() {
+
+      return this.precioSemanal * 4;
+    }
+  
+}
+  
+
+let proveedor1 = new Proveedor("Pedro", "Frutas", 12000, 43603173, "Verduleria Popular");
+let proveedor2 = new Proveedor("Anna", "Chocolates", 15000, 42081456, "Chocolateria Recoleta");
+let proveedor3 = new Proveedor("Santiago", "Cremas", 14500, 41292776, "Cremin");
+
+
+proveedor1.actualizarMercancia("Frutas y Frutos Secos");
+proveedor1.actualizarPrecioSemanal(13500);
+
+console.log(proveedor1.calcularPrecioMensual());  
+console.log(proveedor2.calcularPrecioMensual());
+console.log(proveedor3.calcularPrecioMensual());
+
+
+
+
+// ARRAYS Y METODOS SOBRE ELLOS
+
+
+// Ahora vamos a hacer un array para poder ir sumando los diferentes envases con sus precios en donde se colocara el helado para su venta
+
+class Envase {
+
+    constructor(nombre, tamaño, precio, material) {
+
+      this.nombre = nombre;
+      this.tamaño = tamaño;
+      this.precio = precio;
+      this.material = material;
+    }
+  
+}
+
+  
+const envases = [];
+
+envases.push(new Envase("Pote Pequeño", "2 Bochas", 1500, "Telgopor"));
+envases.push(new Envase("Cuchurucho", "2 Bochas", 1750, "Comestible"));
+envases.push(new Envase("Pote Chico", "1/4 Kg", 4000, "Telgopor"));
+envases.push(new Envase("Pote Mediano", "1/2 Kg", 7000, "Telgopor"));
+envases.push(new Envase("Pote Grande", "1 Kg", 12000, "Telgopor"));
+
+
+// A partir de aqui encontramos los metodos de busqueda y transformacion
+
+const precioEnOferta = envases.filter((es) => es.precio > 6000);
+console.log(precioEnOferta);
+
+
+envases.forEach((prod) => {
+
+    console.log(prod);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
