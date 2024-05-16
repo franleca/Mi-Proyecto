@@ -1,6 +1,8 @@
 
 
 
+// AVISO: VOY A DEJAR LOS PROMPTS PREVIOS PARA QUE VEAN EL PROCESO
+
 // CONDICIONALES
 
 
@@ -10,7 +12,7 @@ let resultado = prompt("Elija 1 gusto de helado extra para probar: Chocolate, Fr
 
 if (   (resultado === "Chocolate") || (resultado === "chocolate") || (resultado === "Frutilla") || (resultado === "frutilla") || (resultado === "Vainilla") || (resultado === 
 
-"vainilla") || (resultado === "Crema") || (resultado === "crema")    ) {
+"vainilla") || (resultado === "Crema") || (resultado === "crema")   ) {
 
     alert("Usted a seleccionado el gusto "+ resultado);
     
@@ -20,7 +22,7 @@ if (   (resultado === "Chocolate") || (resultado === "chocolate") || (resultado 
 
 } else {
     
-    alert("Su producto seleccionado no es valido, podra elegir uno nuevo mas tarde cuando finalice el menu de compras rapido");
+    alert("Su producto seleccionado no es valido, debera modificarlo mas adelante cuando continue con la compra");
     
 };
 
@@ -38,16 +40,16 @@ for (let indice = 0; indice <= 10; indice++) {
 
     if ((nums <= 6) && (nums > 0 )) {
 
-    document.write(`El numero de potes seleccionados anteriormente es ${nums}`);
+    console.log(`El numero de potes seleccionados anteriormente es ${nums}`);
     break; 
 
     } else if ((nums <= 0 ) || (nums > 6 )) {
 
-        document.write(`El numero ${nums} no pudo ser registrado, bien porque excede nuestra capacidad o por ser menor a 1 <br>`);
+        console.log(`El numero ${nums} no pudo ser registrado, bien porque excede nuestra capacidad o por ser menor a 1 <br>`);
         
     } else {
 
-        document.write(`Usted no ingreso un numero en esta ocasion <br>`);
+        console.log(`Usted no ingreso un numero en esta ocasion <br>`);
        
     }
   
@@ -71,27 +73,19 @@ let letr = prompt("Seleccione su barrio; escriba en mayusculas A por Villa Luro,
 switch (letr) {
 
     case "A":
-        alert("Usted selecciono Villa Luro");
+        alert("Usted selecciono Almagro");
         break;
 
     case "B":
-        alert("Usted selecciono Velez Sarsfield");
+        alert("Usted selecciono Boedo");
         break;  
 
     case "C":
-        alert("Usted selecciono Floresta");
-        break;
-
-    case "D":
-        alert("Usted selecciono Monte Castro");
-        break;
-
-    case "E":
-        alert("Usted selecciono Parque Avellaneda");
+        alert("Usted selecciono Caballito");
         break;
 
     default:
-    alert("No ingreso lo solicitado, podra hacerlo mas adelante cuando finalice el menu de compras rapido");
+    alert("No ingreso lo solicitado, podra hacerlo mas adelante despues de finalizar este menu de compras");
     break;
 
 }
@@ -220,12 +214,30 @@ envases.forEach((prod) => {
 
 
 
+// DOM Y EVENTOS
 
 
+function enviarEncuesta() {
 
+    const nombrePersona = document.getElementById("nombre").value;
 
+    const metodoPago = document.getElementById("metodo-pago").value;
 
-
+    const cuotas = document.getElementById("cuotas").value;
+  
+    // Con los datos se podria llegar a hacer algo, como enviarlos a un servidor
+    console.log(
+      `Nombre: ${nombrePersona}, Metodo de Pago: ${metodoPago}, N° de Cuotas: ${cuotas}`
+    );
+  }
+  document
+    .getElementById("formulario-compra")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); 
+      enviarEncuesta();
+      
+});
+  
 
 
 

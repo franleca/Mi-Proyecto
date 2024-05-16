@@ -1,0 +1,135 @@
+/* importamos multiples tipografias a la vez desde google fonts para que puedan ser visualizables desde otros navegadores */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/* Eliminamos el padding y margin predeterminado */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* A PARTIR DE AQUI COMIENZA EL HEADER */
+
+header {
+
+    background-color: #2A3B9C;
+}
+
+/* Usamos un punto adelante para llamar a la clase */
+/* Empleamos esta tecnica para modificar el padding siguiendo las agujas del reloj, la misma tambien sera usada con el margin */
+/* Con display flex permitimos que la caja sea flexible para modificar los elementos internos */
+/* Podemos emplear justify-content o align-items para manipular el contenido ya sea horizontalmente como de manera vertical */
+/* Ahora justificamos el contenido a ambos lados con justify-content space-between */
+.nav-0 {
+    padding: 22px 140px 22px 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* En este caso aliñeamos el item verticalmente utilizando align-items center */
+ .divlogobarra-0 {
+
+    display: flex;
+    align-items: center;
+} 
+
+/* Aqui disminuimos el tamaño del logo con la propiedad width */
+.logobarra-0 {
+
+    width: 12%;
+}
+
+/* Removemos los puntos de la lista */
+.ul-0 {
+
+    list-style-type: none;
+    display: flex;
+}
+
+/* En este caso llamamos al ultimo elemento mediante un enlace en cadena */
+/* Quitamos el subrayado de los items con text-decoration */
+/* LLamamos a la tipografia previamente importada con el uso de comillas */
+/* Empleamos preferentemente pixeles en la tipografia */
+/* Aplicamos otros estilos a la tipografia */
+header nav ul li a {
+
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    text-align: left;
+    margin-left: 40px;
+}
+
+
+/* A PARTIR DE AQUI COMIENZA LA SECTION QUE LE CONTINUA AL HEADER */
+
+.contenedortotal-3-1 {
+
+    display: flex;
+    height: 50rem;
+    justify-content: center;
+}
+
+h1 {
+
+    margin: 50px 0 8px 70px;
+    width: 80%;
+    color: #2A3B9C;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0.1px; 
+    line-height: 1.3; 
+}
+
+.imagen-5-1 {
+
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 15rem;
+}
+
+.imagen-5-1 img {
+
+    width: 29rem;
+}
+
+form {
+
+    padding: 30px 0 25px 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+
+    font-size: 20px;
+    background-color: rgb(200, 228, 255);
+    border: none;
+    font-family: 'Mulish', sans-serif;
+    margin: 10px 0;
+}
+
+form input::placeholder {
+
+    color: rgb(83, 83, 83);
+}
+
+form textarea::placeholder {
+
+    color: rgb(83, 83, 83);
+}
+
+form textarea {
+
+    font-size: 20px;
+    background-color: rgb(200, 228, 255);
+    border: none;
+    font-family: 'Mulish', sans-serif;
+    margin-top: 10px;
+}
+
