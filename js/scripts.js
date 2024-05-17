@@ -217,7 +217,7 @@ envases.forEach((prod) => {
 // DOM Y EVENTOS
 
 
-function enviarEncuesta() {
+function enviarPago() {
 
     const nombrePersona = document.getElementById("nombre").value;
 
@@ -225,19 +225,90 @@ function enviarEncuesta() {
 
     const cuotas = document.getElementById("cuotas").value;
   
-    // Con los datos se podria llegar a hacer algo, como enviarlos a un servidor
+    // En este caso voy utilizar la consola pero con los datos se podria llegar a hacer algo, como enviarlos a un servidor
     console.log(
       `Nombre: ${nombrePersona}, Metodo de Pago: ${metodoPago}, N° de Cuotas: ${cuotas}`
     );
-  }
-  document
+}
+
+document
     .getElementById("formulario-compra")
     .addEventListener("submit", function (event) {
       event.preventDefault(); 
-      enviarEncuesta();
-      
+      enviarPago(); 
+           
+});
+
+
+
+
+// STORAGE Y JSON
+
+
+class Suscriptor {
+
+    constructor(nombre, mail) {
+        
+      this.nombre = nombre;
+      this.mail = mail;
+    }
+}
+  
+
+function personaSuscripta() {
+
+    const suscriptor = localStorage.getItem("suscriptor");
+
+    return suscriptor !== null;
+}
+  
+
+function suscribirPersona(nombre, mail) {
+
+    const suscriptor = new Suscriptor(nombre, mail);
+
+    localStorage.setItem("suscriptor", JSON.stringify(suscriptor));
+
+    document.getElementById("estadoSuscripcion").textContent = `Gracias por Suscribirte, ${nombre}`;
+}
+  
+
+function cancelarSuscripcionPersona() {
+
+    localStorage.removeItem("suscriptor");
+
+    document.getElementById("estadoSuscripcion").textContent = "No estás Suscripto";
+}
+  
+
+document.getElementById("botonHecho").addEventListener("click", function () {
+
+    const nombre = document.getElementById("SuNombre").value;
+    const mail = document.getElementById("Gmail").value;
+
+    suscribirPersona(nombre, mail);
 });
   
+
+document
+    .getElementById("botonCancelar")
+    .addEventListener("click", function () {
+
+      cancelarSuscripcionPersona();
+});
+  
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (personaSuscripta()) {
+
+      const suscriptor = JSON.parse(localStorage.getItem("suscriptor"));
+
+      document.getElementById(
+        "estadoSuscripcion"
+      ).textContent = `Gracias por Suscribirte, ${suscriptor.nombre}`;
+    }
+});
 
 
 
