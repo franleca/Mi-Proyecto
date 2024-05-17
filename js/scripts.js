@@ -1,7 +1,7 @@
 
 
 
-// AVISO: VOY A DEJAR LOS PROMPTS PREVIOS PARA QUE VEAN EL PROCESO
+// AVISO: VOY A DEJAR LOS PROMPTS PREVIOS PARA QUE VEAN EL PROCESO, ENTRE OTROS
 
 // CONDICIONALES
 
@@ -67,7 +67,7 @@ for (let indice = 0; indice <= 10; indice++) {
 
 // El Switch en teoria es una mejor forma de practicar el if - else if - else
 
-let letr = prompt("Seleccione su barrio; escriba en mayusculas A por Villa Luro, B por Velez Sarsfield, C por Floresta, D por Monte Castro y E por Parque Avellaneda");
+let letr = prompt("Seleccione su barrio; escriba en mayusculas A por Almagro, B por Boedo o C por Caballito");
 
 
 switch (letr) {
@@ -236,7 +236,7 @@ document
     .addEventListener("submit", function (event) {
       event.preventDefault(); 
       enviarPago(); 
-           
+
 });
 
 
