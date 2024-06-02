@@ -1,116 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Preentrega-3</title>
-
-    <!-- Link que permite conectar este Html con el Css para poder darle los estilos -->
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Final</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Incluir la biblioteca SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Incluir EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- Incluir Toastify -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
-
-
 <body>
-
-
-    <header>
-
-
-        <nav class="nav-0">
-
-            <!-- Normalmente para tener mayor control de los elementos se los coloca adentro de un div, esto mejora bastante cuando tienen clases -->
-            <!-- En el caso del logo yo prefiero dejarlo a un lado para que sea mas facilmente manipulable con flexbox -->
-            <!-- La imagen del logo podra linkear al inicio insertando una img en un a href -->
-            <div class="divlogobarra-0">
-                <a href="index.html"><img src="imagenes/0-logo.png" alt="mosoki inicio" class="logobarra-0"></a>
-            </div>
-
-            <ul class="ul-0">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html">Productos</a></li>
-                <li><a href="index.html">Nosotros</a></li>
-                <li><a href="index.html">Local</a></li>
-                <li><a href="index.html">Contacto</a></li>
-            </ul>
-
-        </nav>
-
-
-    </header>
-
-
-    <section>
-
-        <!-- El contenedor constara de un titulo con un formulario en el lado izquierdo de la pantalla y una imagen en el lado derecho -->
-        <div class="contenedortotal-3-1">
-
-            <div>
-   
-                <h1>Elija su forma de pago:</h1>
-
-                <form id="formulario-compra">
-
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" required>
-
-                    <label for="metodo-pago">Metodo de Pago:</label>
-                    <select id="metodo-pago">
-                        <option value="Visa">Visa</option>
-                        <option value="Master Card">Master Card</option>
-                        <option value="Transferencia">Transferencia</option>
-                    </select>
-
-                    <label for="cuotas">N° de Cuotas a Pagar:</label>
-                    <input type="number" id="cuotas" min="1" max="12" required>
-
-                    <button type="submit">Enviar</button>
-                </form>
-
-
-                
-                <h1>Suscribite para recibir Ofertas!</h1>
-
-                <div class="recibir-ofertas">
-
-                    <div id="estadoSuscripcion">No estás Suscripto</div>
-
-
-                    <input type="text" id="SuNombre" placeholder="Tu Nombre">
-                    
-                    <input type="email" id="Gmail" placeholder="Tu Gmail">
-
-
-                    <button id="botonHecho">Hecho</button>
-
-                    <button id="botonCancelar">Cancelar</button>
-                </div>    
-
-            </div>  
-
-
-            <div class="imagen-5-1">
-                <img src="imagenes/1-1-helado.jpg" alt="mano sosteniedo un helado">
-            </div>
-            
+  <div class="row" id="contenedorGeneral">
+    <div class="col-8" id="contenedorCalculadora">
+      <div class="container">
+        <h1>Calculadora del valor de la Cobertura</h1>
+        <form id="edad-form">
+          <div class="form-group">
+            <label for="edad-input">Ingrese su edad (entre 0 y 60):</label>
+            <input type="number" id="edad-input" min="0" max="60" required>
+          </div>
+          <h2>Seleccione las coberturas deseadas:</h2>
+          <div id="coberturas-container" class="coberturas">
+            <!-- Aquí se agregarán los divs para cada cobertura -->
+          </div>
+          <button type="button" class="btn">Calcular</button>
+        </form>
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar">&times;</span>
+          <p>Debes ingresar una edad válida entre 0 y 60.</p>
         </div>
-
-
-    </section>
-
-   
-    <!-- En el footer se suele colocar la informacion de contacto, las redes, entre otras cosas, en este caso no lo voy a poner porque en mi web deberia estar mas abajo, pasando varias pantallas 
-
-    <footer>
-
-    </footer> -->
-
-
-     <!-- En este script conectamos el archivo javascript con el html -->
-     <script src="js/scripts.js"></script>
-    
+      </div>
+      <div id="formularioContacto">
+        <div></div>
+      </div>
+    </div>
+    <div class="col-4" id="contenedorImagen">
+      <img src="vertical.jpg" alt="Imagen descriptiva">
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
-
-
 </html>
+
