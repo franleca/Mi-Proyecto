@@ -1,5 +1,6 @@
 
 
+
 // Obtener elementos del DOM
 
 const edadForm = document.getElementById('edad-form');
@@ -7,6 +8,7 @@ const resultadoFinal = document.getElementById('resultado-final');
 const coberturasContainer = document.getElementById('coberturas-container');
 const botonCalcular = document.querySelector('.btn');
 const coberturas = ["Guardias", "Dentales", "Medicamentos", "Salud Mental", "Cirugías Plásticas", "Consultorios", "Análisis", "Rayos"];
+
 
 
 // Función para crear los selectores de coberturas
@@ -38,6 +40,7 @@ function crearDivsCoberturas() {
 }
 
 
+
 // Función para calcular el incremento total
 
 function calcularIncrementoTotal(precioInicial) {
@@ -63,10 +66,12 @@ function calcularIncrementoTotal(precioInicial) {
 }
 
 
+
 // Obtener elementos del modal
 
 const modal = document.getElementById("modal");
 const cerrar = document.getElementsByClassName("cerrar")[0];
+
 
 
 // Función para mostrar el modal
@@ -74,6 +79,7 @@ const cerrar = document.getElementsByClassName("cerrar")[0];
 function mostrarModal() {
   modal.style.display = "block";
 }
+
 
 
 // Eventos para cerrar el modal
@@ -89,6 +95,7 @@ window.onclick = function(event) {
 }
 
 
+
 // Función para guardar las coberturas en el localStorage
 
 function guardarCoberturasEnLocalStorage() {
@@ -99,6 +106,7 @@ function guardarCoberturasEnLocalStorage() {
   }
   localStorage.setItem('coberturas', JSON.stringify(coberturasSeleccionadas));
 }
+
 
 
 // Función para cargar datos desde el localStorage
@@ -121,6 +129,7 @@ function cargarDatosDesdeLocalStorage() {
 }
 
 
+
 // Función para calcular el valor total de la cobertura
 
 function calcularValorTotal() {
@@ -138,10 +147,11 @@ function calcularValorTotal() {
   }
 
 
+
   // Almacenar la edad en localStorage
 
   localStorage.setItem('edad', edad);
-
+  
 
   // Guardar las coberturas en localStorage
 
@@ -188,9 +198,11 @@ function calcularValorTotal() {
 }
 
 
+
 // Inicializar EmailJS
 
 emailjs.init('mDrVPewzDYHwf84iL');
+
 
 
 // Para mostrar el formulario de contacto
@@ -264,6 +276,7 @@ function mostrarFormularioContacto(detalleCoberturas) {
     }
   });
 }
+
 
 
 // Evento para calcular el valor total
